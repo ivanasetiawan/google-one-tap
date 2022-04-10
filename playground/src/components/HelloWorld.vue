@@ -31,6 +31,19 @@
 </template>
 
 <script>
+import Vue from "vue";
+import OneTapLogin from 'one-tap-login';
+
+const callback = () => {
+    const redirectUrl = 'https://www.venopi.com';
+    window.location.assign(redirectUrl);
+};
+
+new Vue.use(OneTapLogin, {
+  clientId: '410358638264-egs2qtqe6i9mn19c56lhnscblfnuols4.apps.googleusercontent.com',
+  isLoggedIn: false,
+}, callback);
+
 export default {
   name: 'HelloWorld',
   props: {
