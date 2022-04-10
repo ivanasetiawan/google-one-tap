@@ -1,2 +1,7 @@
-# google-one-tap
-Google One Tap Login on your website
+# Google One Tap
+## Setup the project
+- package.json
+- ESLint configuration
+- Babel configuration
+- Jest configuration
+- .gitignore
