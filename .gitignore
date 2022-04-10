@@ -4,3 +4,6 @@ npm-debug.log
 test/coverage
 dist
 reports
+
+#test
+junit.xml
