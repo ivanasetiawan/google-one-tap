@@ -42,4 +42,21 @@ export default {
     _load() {
         return !this.isLoaded ? this._loadLibrary() : null;
     },
+
+    /**
+     * Load the library method.
+     * Based on this: https://developers.google.com/identity/gsi/web/guides/client-library
+     */
+    _loadLibrary() {
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://accounts.google.com/gsi/client';
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+        script.addEventListener('load', () => {
+            this.isLoaded = true;
+        });
+        this._init();
+    },
 };
