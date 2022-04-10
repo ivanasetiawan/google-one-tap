@@ -1,0 +1,28 @@
+/*
+* options (Object): 
+*   - isLoggedIn (Boolean): Logged in status
+*   - clientId (String): Your Google's credential client ID
+* callback (Function)
+* 
+* Usage: 
+* new Vue.use(OneTapLogin, {
+*   id: 'Client ID',
+*   isLoggedIn: false,
+* }, callback);
+*/
+
+export default {
+    install(_, options, callback) {
+        this.options = options;
+        this.callback = callback;
+        this.isLoaded = false;
+
+        /**
+         * Rules to not execute:
+         * User is already logged in, or client ID is not defined.
+         */
+        const rules =
+            this.options?.isLoggedIn || !this.options?.clientId;
+        this._checkExecutable(rules);
+    },
+};
