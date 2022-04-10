@@ -25,4 +25,12 @@ export default {
             this.options?.isLoggedIn || !this.options?.clientId;
         this._checkExecutable(rules);
     },
+
+    /**
+     * Check if the plugin is executable based on the `rules`.
+     */
+    _checkExecutable(rules) {
+        if (rules) return;
+        this._load();
+    },
 };
