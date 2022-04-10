@@ -59,4 +59,27 @@ export default {
         });
         this._init();
     },
+
+    /**
+     * Initialise the Google One Tap
+     */
+    _init() {
+        const ctx = this.options?.context || 'signin'; // eslint-disable-line
+        const context = ['signin', 'signup', 'use'].includes(ctx)
+            ? ctx
+            : 'signin';
+        const callback = this.callback;
+        /* eslint-disable */
+        const client_id = this.options?.clientId; // eslint-disable-line
+        window.onload = function () {
+            window.google.accounts.id.initialize({
+                client_id,
+                cancel_on_tap_outside: false,
+                context,
+                callback,
+            });
+            window.google.accounts.id.prompt();
+        };
+        /* eslint-enable */
+    },
 };
