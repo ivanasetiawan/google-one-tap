@@ -33,4 +33,13 @@ export default {
         if (rules) return;
         this._load();
     },
+
+    /**
+     * Load method to check if the plugin is not yet loaded.
+     * If not yet, load the library,
+     * If already loaded, do not load the library
+     */
+    _load() {
+        return !this.isLoaded ? this._loadLibrary() : null;
+    },
 };
