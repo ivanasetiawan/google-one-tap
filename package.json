@@ -2,7 +2,7 @@
   "name": "one-tap-login",
   "version": "1.0.0",
   "description": "Google One Tap Login Vue.js plugin",
-  "main": "index.js",
+  "main": "onetaplogin.js",
   "author": "Ivana Setiawan",
   "license": "MIT",
   "scripts": {
