@@ -8,7 +8,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "eslint --fix --ext \".js,.vue\" ."
+    "lint": "eslint --fix --ext \".js,.vue\" .",
+    "playground": "npm link && cd playground && npm i && npm link one-tap-login && npm run serve"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
